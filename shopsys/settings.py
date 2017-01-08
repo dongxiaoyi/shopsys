@@ -78,12 +78,18 @@ WSGI_APPLICATION = 'shopsys.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hshopsys',
+        'NAME': 'shopsys',
         'USER': 'shopsys',
         'PASSWORD': 'sk927312*',
         'HOST': 'localhost',
         'PORT': '3306',
-        'TEST': '{}', #测试数据库配置
+        'TEST': {
+            'NAME': 'shopsystest',
+            'USER': 'shopsystest',
+            'PASSWORD': 'shopsystest',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        },
     }
 }
 
@@ -110,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'zh-CN'
+LANGUAGE_CODE = 'zh-Hans'
 
 TIME_ZONE = 'Asia/Shanghai'
 
