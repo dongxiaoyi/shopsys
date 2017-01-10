@@ -122,18 +122,33 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'zh-Hans'
 
 TIME_ZONE = 'Asia/Shanghai'
-
+#是否开启国际化支持，不开启时可以不加载翻译模块优化性能
 USE_I18N = True
-
+#本地化格式支持，为True时使用系统locale设置显示数字，时间等格式
 USE_L10N = True
 
 USE_TZ = True
-
-
+#是否设置Etag，设置Etag可以降低网络资源开销，但是会增加服务器性能开销
+USE_ETAGS = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+#在给定的路径中寻找静态资源
+STATICFILES_DIRS = (
+    os.path.join(SETTINGS_DIR,'static')
+)
+
 STATIC_URL = '/static/'
+
+#用户上传文件位置
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+
+#站点设置
+SITE_NAME = '小白购'
+META_KEYWORDS = '小白购，男装特价，精品女鞋，计算机图书，双十一特惠'
+META_DESCRIPTION = '''小白购'''
+
 LOGGING = {
     'version':1,
     'disable_existing_loggers':False,
